@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getCountryInfo } from "@/lib/wikipedia";
 
@@ -15,7 +15,7 @@ type CountryInfo = {
   attractions: string | null;
 };
 
-export default function AnswerPage() {
+function AnswerContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [country, setCountry] = useState<Country | null>(null);
@@ -111,5 +111,23 @@ export default function AnswerPage() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function AnswerPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] p-4">
+        <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-6">
+          <div className="animate-pulse">
+            <div className="h-6 bg-gray-200 rounded w-3/4 mx-auto mb-6"></div>
+            <div className="aspect-video bg-gray-200 rounded mb-6"></div>
+            <div className="h-10 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </div>
+    }>
+      <AnswerContent />
+    </Suspense>
   );
 } 
