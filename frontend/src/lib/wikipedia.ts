@@ -36,20 +36,20 @@ export async function getCountryInfo(countryName: string): Promise<CountryInfo> 
 
     // テキストを分割して情報を抽出
     const text = extract.replace(/\n/g, ' ');
-    const sentences = text.split(/[。．]/).filter(s => s.trim().length > 0);
+    const sentences = text.split(/[。．]/).filter((s: string) => s.trim().length > 0);
 
     // 基本情報（最初の2文）
     const description = sentences.slice(0, 2).join('。') + '。';
 
     // 名産物や特産品に関する情報を探す
     const specialtyKeywords = ['特産', '名産', '産物', '生産', '輸出', '農産物', '海産物'];
-    const specialties = sentences.find(s => 
+    const specialties = sentences.find((s: string) => 
       specialtyKeywords.some(keyword => s.includes(keyword))
     ) || null;
 
     // 観光地や見どころに関する情報を探す
     const attractionKeywords = ['観光', '見どころ', '観光地', '世界遺産', '名所', '遺跡', '博物館'];
-    const attractions = sentences.find(s => 
+    const attractions = sentences.find((s: string) => 
       attractionKeywords.some(keyword => s.includes(keyword))
     ) || null;
 
