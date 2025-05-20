@@ -8,10 +8,14 @@ on:
 permissions:
   contents: write
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./frontend
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    working-directory: ./frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
