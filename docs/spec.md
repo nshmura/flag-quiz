@@ -7,7 +7,7 @@
 **収益モデル**
 Google AdSenseによる広告収益化
 
-## ✅ 要件定義（確定版）
+## ✅ 要件定義
 
 ### 1. 機能要件（Next.js CSR）
 
@@ -95,19 +95,20 @@ import Script from 'next/script';
 ### 6. ディレクトリ構成 （Next.js App Router）
 
 ```
-/app/
-  └ page.tsx              ← クイズメイン画面（クライアントコンポーネント）
-  └ layout.tsx            ← ルートレイアウト（metaタグ、AdSenseスクリプト等）
-/components/
-  └ FlagQuiz.tsx          ← クイズのUI＆ロジック（クライアントコンポーネント）
-/lib/
-  └ getCountryData.ts     ← codes.json取得・整形ロジック
-/public/
-  └ favicon.ico           ← サイトアイコン（任意）
-/styles/
-  └ globals.css           ← Tailwind CSSスタイル
-  └ tailwind.config.ts    ← Tailwind 設定
-  └ postcss.config.js     ← PostCSS 設定
+frontend/
+  src/app/
+    └ page.tsx              ← クイズメイン画面（クライアントコンポーネント）
+    └ layout.tsx            ← ルートレイアウト（metaタグ、AdSenseスクリプト等）
+  src/components/
+    └ FlagQuiz.tsx          ← クイズのUI＆ロジック（クライアントコンポーネント）
+  src/lib/
+    └ getCountryData.ts     ← codes.json取得・整形ロジック
+  /public/
+    └ favicon.ico           ← サイトアイコン（任意）
+  src/styles/
+    └ globals.css           ← Tailwind CSSスタイル
+    └ tailwind.config.ts    ← Tailwind 設定
+    └ postcss.config.js     ← PostCSS 設定
 ```
 
 

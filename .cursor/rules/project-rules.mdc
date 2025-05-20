@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# 仕様
+
+プロジェクトの仕様は docs/spec.md にあります。
