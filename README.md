@@ -2,4 +2,4 @@
 
 国旗クイズサイト
 
-Vibe Coding のテストとして作成
+Vibe Coding のテスト用サイト
