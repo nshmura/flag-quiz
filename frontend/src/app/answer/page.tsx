@@ -87,6 +87,19 @@ function AnswerContent() {
           次の問題へ
         </button>
 
+        <div className="aspect-[4/3] relative">
+          {country && (
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(country.name)}&zoom=3`}
+              className="w-full h-full rounded-lg"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          )}
+        </div>
+
         {countryInfo && (
           <div className="space-y-4 text-gray-700">
             {countryInfo.description && (
