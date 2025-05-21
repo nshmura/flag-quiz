@@ -106,6 +106,16 @@ function AnswerContent() {
               <div>
                 <h3 className="font-semibold mb-2">基本情報</h3>
                 <p>{countryInfo.description}</p>
+                {country && (
+                  <a
+                    href={`https://ja.wikipedia.org/wiki/${encodeURIComponent(country.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    Wikipediaで詳しく見る →
+                  </a>
+                )}
               </div>
             )}
             {countryInfo.specialties && (
