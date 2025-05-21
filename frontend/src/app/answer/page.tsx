@@ -52,10 +52,10 @@ function AnswerContent() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] p-4">
+      <div className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] p-4">
         <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-6">
           <div className="animate-pulse">
-            <div className="h-6 bg-gray-200 rounded w-3/4 mx-auto mb-6"></div>
+            <div className="h-6 bg-gray-200 rounded w-3/4 mb-6"></div>
             <div className="aspect-video bg-gray-200 rounded mb-6"></div>
             <div className="h-10 bg-gray-200 rounded"></div>
           </div>
@@ -65,9 +65,9 @@ function AnswerContent() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] p-4">
+    <div className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] p-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-6">
-        <h2 className="text-2xl font-bold text-center text-gray-800">
+        <h2 className="text-2xl font-bold text-gray-800">
           答え：{country?.name}
         </h2>
         <div className="aspect-video relative">
@@ -80,6 +80,13 @@ function AnswerContent() {
           )}
         </div>
         
+        <button
+          onClick={() => router.push("/quiz")}
+          className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
+        >
+          次の問題へ
+        </button>
+
         {countryInfo && (
           <div className="space-y-4 text-gray-700">
             {countryInfo.description && (
@@ -102,13 +109,6 @@ function AnswerContent() {
             )}
           </div>
         )}
-
-        <button
-          onClick={() => router.push("/quiz")}
-          className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
-        >
-          次の問題へ
-        </button>
       </div>
     </div>
   );
@@ -117,10 +117,10 @@ function AnswerContent() {
 export default function AnswerPage() {
   return (
     <Suspense fallback={
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] p-4">
+      <div className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] p-4">
         <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-6">
           <div className="animate-pulse">
-            <div className="h-6 bg-gray-200 rounded w-3/4 mx-auto mb-6"></div>
+            <div className="h-6 bg-gray-200 rounded w-3/4 mb-6"></div>
             <div className="aspect-video bg-gray-200 rounded mb-6"></div>
             <div className="h-10 bg-gray-200 rounded"></div>
           </div>
