@@ -48,8 +48,8 @@ export default function QuizPage() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] p-4">
-        <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-6">
+      <div className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] p-4 bg-white">
+        <div className="w-full max-w-md bg-orange-100 rounded-lg shadow-lg p-6 space-y-6">
           <div className="animate-pulse">
             <div className="h-6 bg-gray-200 rounded w-3/4 mb-6"></div>
             <div className="aspect-video bg-gray-200 rounded mb-6"></div>
@@ -61,8 +61,8 @@ export default function QuizPage() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-6">
+    <div className="flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] p-4 bg-white">
+      <div className="w-full max-w-md bg-orange-100 rounded-lg shadow-lg p-6 space-y-6">
         <p className="text-xl text-gray-700 font-medium">
           この国旗の国名はなんでしょう？
         </p>
